@@ -847,7 +847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joinGameButtonPrefab: {fileID: 1563291833}
   serverListPanel: {fileID: 1476614025}
-  buttonsSpacing: 67
+  buttonsSpacing: 53
 --- !u!114 &1490802417
 MonoBehaviour:
   m_ObjectHideFlags: 0
