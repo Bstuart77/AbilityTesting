@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 7127416254297446538}
   - component: {fileID: -3009200454594559308}
   - component: {fileID: 407070302554644882}
+  - component: {fileID: 755720903401723690}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -294,6 +295,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityCamera: {fileID: 396506343764795823}
+--- !u!114 &755720903401723690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224343185892706512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fec6a5f115f3f43848e2233b8aa433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localhealth: 5
 --- !u!1 &6280259474827072530
 GameObject:
   m_ObjectHideFlags: 0
