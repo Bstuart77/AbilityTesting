@@ -15,11 +15,6 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
     private void HealthCallBack()
     {
         localhealth = state.Health;
-        
-        if (localhealth <= 0)
-        {
-            BoltNetwork.Destroy(gameObject);
-        }
     }
    
 
@@ -28,14 +23,12 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
         if(collision.transform.name == "Bullet(Clone)")
         {
             localhealth -= 1;
-            print("HIT");
 
             BoltNetwork.Destroy(collision.gameObject);
             
             if (localhealth <= 0)
             {
-                BoltNetwork.Destroy(gameObject);    
-                print("KILLED");
+                BoltNetwork.Destroy(gameObject);
             }
         }
     }
