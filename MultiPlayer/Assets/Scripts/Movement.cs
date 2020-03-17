@@ -8,46 +8,28 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
     public Transform playerbody;
     private float xRotate = 0;
     private float yRotate = 0;
+    private Rigidbody rb;
+
 
     public override void Attached()
     {
         state.SetTransforms(state.CubeTransform, gameObject.transform);
     }
 
-   /* private void Start()
+   private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-    }*/
+        //Cursor.lockState = CursorLockMode.Locked;
+        rb = GetComponent<Rigidbody>();
+    }
 
     public override void SimulateOwner()
-    {
-        var speed = 25f;
-        var movement = Vector3.zero;
-      
-       
+    { 
 
+        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical") * sens * BoltNetwork.FrameDeltaTime);
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            movement.x -= 1f;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            movement.x += 1f;
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            movement.z += 1f;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            movement.z -= 1f;
-        }
+        Vector3 newPos = rb.position + rb.transform.TransformDirection(movement);
 
-        if (movement != Vector3.zero)
-        {
-            transform.position = transform.position + movement.normalized * speed * BoltNetwork.FrameDeltaTime;
-        }
+        rb.MovePosition(newPos);
 
         float mouseX = Input.GetAxis("Mouse X") * sens * BoltNetwork.FrameDeltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sens * BoltNetwork.FrameDeltaTime;
