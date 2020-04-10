@@ -1221,6 +1221,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dcb91117fe9cf4ba95a10f5aed3f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2019188422
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019188419}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &6152545007885023846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1231,7 +1244,7 @@ PrefabInstance:
     - target: {fileID: 7796246830666923079, guid: 153234bc3de8b884099520c733c371a1,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Cube
       objectReference: {fileID: 0}
     - target: {fileID: 7796246830666923079, guid: 153234bc3de8b884099520c733c371a1,
         type: 3}
@@ -1328,5 +1341,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.4009
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2200537589449831959, guid: 153234bc3de8b884099520c733c371a1,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1957648913459961693, guid: 153234bc3de8b884099520c733c371a1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 153234bc3de8b884099520c733c371a1, type: 3}
