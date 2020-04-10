@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectPistol : Bolt.GlobalEventListener
+public class CollectPistol : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.name == "Cube(Clone)")
+        if (other.name == "Cube(Clone)")
         {
             Destroy(gameObject);
         }
