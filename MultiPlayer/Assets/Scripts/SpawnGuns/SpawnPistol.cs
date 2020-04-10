@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnPistol : Bolt.GlobalEventListener
+public class SpawnPistol : MonoBehaviour
 {
     public GameObject pistol;
-    [BoltGlobalBehaviour]
-    public override void SceneLoadLocalDone(string scene)
+
+     void Start()
     {
-        var spawnPosition = new Vector3(0, .58f, .075f);
-        BoltNetwork.Instantiate(pistol, spawnPosition, Quaternion.identity);
+        StartCoroutine(spawnPistol());
+    }
+
+    IEnumerator spawnPistol()
+    {
+        Instantiate(pistol, new Vector3(114, 37, 0), Quaternion.Euler(90,0,0));
+
+        yield return new WaitForSeconds(5f);
     }
 }
