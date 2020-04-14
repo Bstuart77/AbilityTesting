@@ -6,15 +6,18 @@ public class SpawnPistol : MonoBehaviour
 {
     public GameObject pistol;
 
-     void Start()
+    private void Start()
     {
-        StartCoroutine(spawnPistol());
+        StartCoroutine(pistolSpawn());
     }
+    IEnumerator pistolSpawn() {
 
-    IEnumerator spawnPistol()
-    {
-        Instantiate(pistol, new Vector3(114, 37, 0), Quaternion.Euler(90,0,0));
-
-        yield return new WaitForSeconds(5f);
+        while (Timer.timeLeft > 0)
+        {
+            pistol.SetActive(true);
+            yield return new WaitForSeconds(5f);
+        }
+    
     }
 }
+
