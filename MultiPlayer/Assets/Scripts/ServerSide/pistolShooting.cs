@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-public class Shooting : Bolt.EntityBehaviour<ICustomCubeState>
+public class pistolShooting : Bolt.EntityBehaviour<ICustomCubeState>
 {
     public Rigidbody bulletPrefab;
     public float bulledSpeed;
