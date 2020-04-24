@@ -2491,7 +2491,7 @@
           }
         }
       ],
-      "Name": "WeaponSlot",
+      "Name": "Weapon",
       "Guid": "b0b61666-381d-47cb-be96-62ee2f895852",
       "Groups": [
         "samples"
@@ -3273,7 +3273,6 @@
         {
           "Name": "CubeTransform",
           "Enabled": true,
-          "Expanded": true,
           "ReplicationMode": 1,
           "Priority": 1,
           "PropertyType": {
@@ -3354,7 +3353,6 @@
         {
           "Name": "Shoot",
           "Enabled": true,
-          "Expanded": true,
           "ReplicationMode": 1,
           "Priority": 1,
           "PropertyType": {
@@ -3371,7 +3369,44 @@
         {
           "Name": "Health",
           "Enabled": true,
-          "Expanded": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Bolt.Compiler.PropertyTypeInteger, bolt.compiler",
+            "MaxValue": 255
+          },
+          "AssetSettings": {
+            "$type": "Bolt.Compiler.PropertyStateSettings, bolt.compiler",
+            "ExtrapolationErrorTolerance": 0.25,
+            "_ExtrapolationCorrectionFrames": 6,
+            "ExtrapolationMaxFrames": 9,
+            "SnapMagnitude": 10.0
+          }
+        },
+        {
+          "Name": "WeaponArray",
+          "Enabled": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Bolt.Compiler.PropertyTypeArray, bolt.compiler",
+            "ElementCount": 2,
+            "ElementType": {
+              "$type": "Bolt.Compiler.PropertyTypeObject, bolt.compiler",
+              "StructGuid": "b0b61666-381d-47cb-be96-62ee2f895852"
+            }
+          },
+          "AssetSettings": {
+            "$type": "Bolt.Compiler.PropertyStateSettings, bolt.compiler",
+            "ExtrapolationErrorTolerance": 0.25,
+            "_ExtrapolationCorrectionFrames": 6,
+            "ExtrapolationMaxFrames": 9,
+            "SnapMagnitude": 10.0
+          }
+        },
+        {
+          "Name": "WeaponActiveIndex",
+          "Enabled": true,
           "ReplicationMode": 1,
           "Priority": 1,
           "PropertyType": {
@@ -3481,6 +3516,50 @@
       "GlobalSenders": 1,
       "Name": "PlayerJoinedEvent",
       "Guid": "a1ccb616-c005-4117-9e6a-5591b4155605",
+      "Groups": [
+        "samples"
+      ]
+    },
+    {
+      "$type": "Bolt.Compiler.ObjectDefinition, bolt.compiler",
+      "Properties": [
+        {
+          "Name": "WeaponId",
+          "Enabled": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Bolt.Compiler.PropertyTypeInteger, bolt.compiler",
+            "MaxValue": 255
+          },
+          "AssetSettings": {
+            "$type": "Bolt.Compiler.PropertyStateSettings, bolt.compiler",
+            "ExtrapolationErrorTolerance": 0.25,
+            "_ExtrapolationCorrectionFrames": 6,
+            "ExtrapolationMaxFrames": 9,
+            "SnapMagnitude": 10.0
+          }
+        },
+        {
+          "Name": "WeaponAmmo",
+          "Enabled": true,
+          "ReplicationMode": 1,
+          "Priority": 1,
+          "PropertyType": {
+            "$type": "Bolt.Compiler.PropertyTypeInteger, bolt.compiler",
+            "MaxValue": 255
+          },
+          "AssetSettings": {
+            "$type": "Bolt.Compiler.PropertyStateSettings, bolt.compiler",
+            "ExtrapolationErrorTolerance": 0.25,
+            "_ExtrapolationCorrectionFrames": 6,
+            "ExtrapolationMaxFrames": 9,
+            "SnapMagnitude": 10.0
+          }
+        }
+      ],
+      "Name": "WeaponSlot",
+      "Guid": "514abb76-ac86-4659-b343-89b37e1d1741",
       "Groups": [
         "samples"
       ]
