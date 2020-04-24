@@ -5,6 +5,8 @@ using UnityEngine;
 public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
 {
     private float sens = 100f;
+    private float speed = 4f;
+
     public Transform playerbody;
     private float xRotate = 0;
     private float yRotate = 0;
@@ -23,14 +25,20 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
     }
 
     public override void SimulateOwner()
-    { 
+    {
+        //movement
 
-        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical") * sens * BoltNetwork.FrameDeltaTime);
+        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical") * sens * BoltNetwork.FrameDeltaTime);
 
         Vector3 newPos = rb.position + rb.transform.TransformDirection(movement);
 
         rb.MovePosition(newPos);
 
+        //weapon swapping
+        if (Input.GetKeyDown(KeyCode.Alpha1)) state.WeaponActiveIndex = 0;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) state.WeaponActiveIndex = 1;
+
+        //free look
         float mouseX = Input.GetAxis("Mouse X") * sens * BoltNetwork.FrameDeltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sens * BoltNetwork.FrameDeltaTime;
 
