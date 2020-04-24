@@ -1,18 +1,35 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Bolt;
 
-public class ServerSwitchGuns : MonoBehaviour
+public class ServerSwitchGuns : Bolt.EntityBehaviour<ICustomCubeState>
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] WeaponObjects;
+
+    public override void Attached()
     {
-        
+        if (entity.IsOwner)
+        {
+            for (int i = 0; i < state.WeaponArray.Length; ++i)
+            {
+                state.WeaponArray[i].WeaponId = i;
+                state.WeaponArray[i].WeaponAmmo = Random.Range(50, 100);
+            }
+            state.WeaponActiveIndex = -1;
+        }
+        state.AddCallback("WeaponActiveIndex", WeaponActiveIndexChanged);
     }
 
-    // Update is called once per frame
-    void Update()
+    void WeaponActiveIndexChanged()
     {
-        
+        for (int i = 0; i < WeaponObjects.Length; ++i)
+        {
+            WeaponObjects[i].SetActive(false);
+        }
+        if (state.WeaponActiveIndex >= 0)
+        {
+            int objectId = state.WeaponArray[state.WeaponActiveIndex].WeaponId;
+            WeaponObjects[objectId].SetActive(true);
+        }
     }
 }
