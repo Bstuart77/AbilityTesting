@@ -35,8 +35,8 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
         rb.MovePosition(newPos);
 
         //weapon swapping
-        if (Input.GetKeyDown(KeyCode.Alpha1)) state.WeaponActiveIndex = 0;
-        if (Input.GetKeyDown(KeyCode.Alpha2)) state.WeaponActiveIndex = 1;
+        if (Input.GetKey(KeyCode.Alpha1)) state.WeaponActiveIndex = 0;
+        if (Input.GetKey(KeyCode.Alpha2)) state.WeaponActiveIndex = 1;
 
         //free look
         float mouseX = Input.GetAxis("Mouse X") * sens * BoltNetwork.FrameDeltaTime;
