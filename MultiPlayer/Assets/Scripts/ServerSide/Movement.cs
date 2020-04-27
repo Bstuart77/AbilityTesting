@@ -35,9 +35,20 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
         rb.MovePosition(newPos);
 
         //weapon swapping
-        if (Input.GetKey(KeyCode.Alpha1)) state.WeaponActiveIndex = 0;
-        if (Input.GetKey(KeyCode.Alpha2)) state.WeaponActiveIndex = 1;
+        if (Input.GetKey(KeyCode.Alpha1))   //PISTOL
+        {
+            state.WeaponActiveIndex = 0;
+            gameObject.GetComponent<shootAR>().enabled = false;
+            gameObject.GetComponent<pistolShooting>().enabled = true;
 
+        }
+        if (Input.GetKey(KeyCode.Alpha2))   //AR
+        {
+            gameObject.GetComponent<pistolShooting>().enabled = false;
+            gameObject.GetComponent<shootAR>().enabled = true;
+
+            state.WeaponActiveIndex = 1;
+        }
         //free look
         float mouseX = Input.GetAxis("Mouse X") * sens * BoltNetwork.FrameDeltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sens * BoltNetwork.FrameDeltaTime;
