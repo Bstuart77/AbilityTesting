@@ -15,7 +15,6 @@ public class ServerSwitchGuns : Bolt.EntityBehaviour<ICustomCubeState>
                 state.WeaponArray[i].WeaponId = i;
                 state.WeaponArray[i].WeaponAmmo = Random.Range(50, 100);
             }
-            state.WeaponActiveIndex = -1;
         }
         state.AddCallback("WeaponActiveIndex", WeaponActiveIndexChanged);
     }
