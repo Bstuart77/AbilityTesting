@@ -5,7 +5,6 @@ using UnityEngine;
 public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
 {
     private float sens = 100f;
-    private float speed = 4f;
 
     public Transform playerbody;
     private float xRotate = 0;
@@ -22,6 +21,7 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
     {
         //Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
+        
     }
 
     public override void SimulateOwner()
