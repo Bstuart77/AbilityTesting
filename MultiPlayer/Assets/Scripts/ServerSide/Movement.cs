@@ -21,7 +21,10 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
     {
         //Cursor.lockState = CursorLockMode.Locked;
         rb = GetComponent<Rigidbody>();
-        
+
+        state.WeaponActiveIndex = 0;
+        gameObject.GetComponent<shootAR>().enabled = false;
+        gameObject.GetComponent<pistolShooting>().enabled = true;
     }
 
     public override void SimulateOwner()
