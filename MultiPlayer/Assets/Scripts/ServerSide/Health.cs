@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : Bolt.EntityBehaviour<ICustomCubeState>
 {
-    private int localhealth;
+    public int localhealth;
 
     public override void Attached()
     {
