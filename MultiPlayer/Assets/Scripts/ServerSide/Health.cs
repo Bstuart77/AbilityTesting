@@ -28,7 +28,9 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
             
             if (localhealth <= 0)
             {
-                BoltNetwork.Destroy(gameObject);
+                var spawnPosition = new Vector3(Random.Range(39, 122), 38f, Random.Range(34, -45));
+                transform.position = spawnPosition;
+                localhealth = 5;
             }
         }
     }
