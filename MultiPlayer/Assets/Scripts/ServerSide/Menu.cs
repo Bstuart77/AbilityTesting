@@ -8,9 +8,29 @@ public class Menu : Bolt.GlobalEventListener
 {
     public Button joinGameButtonPrefab;
     public GameObject serverListPanel;
+    public GameObject setUserNamePanel;
     private List<Button> joinServerButtons = new List<Button>();
     public float  buttonsSpacing;
     ///HOST
+
+    private void Start()
+    {
+      if(PlayerPrefs.GetString("username") == null)
+        {
+            setUserNamePanel.SetActive(true);
+        }
+        else
+        {
+            setUserNamePanel.SetActive(false);
+        }
+    }
+
+    public void setUsernameValue(string input)
+    {
+        print(input);
+        PlayerPrefs.SetString("username", input);
+
+    }
     public void startServer()
     {
         BoltLauncher.StartServer();
@@ -47,7 +67,9 @@ public class Menu : Bolt.GlobalEventListener
             joinGameButtonClone.onClick.AddListener(() => joinGame(photonSession));
 
             joinServerButtons.Add(joinGameButtonClone);
+            totalSessions += 1;
         }
+        totalSessions = 0;
     }
     private void joinGame(UdpSession photonsession)
     {
