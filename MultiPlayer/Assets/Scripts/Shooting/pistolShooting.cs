@@ -15,7 +15,6 @@ public class pistolShooting : Bolt.EntityBehaviour<ICustomCubeState>
     {
         Rigidbody bulletClone = Instantiate(bulletPrefab, muzzle.transform.position, this.transform.rotation);
         bulletClone.velocity = transform.TransformDirection(new Vector3(0, 0, bulledSpeed));
-        bulletClone.GetComponent<bullet>().shootingScript = this;
     }
     private void Update()
     {
