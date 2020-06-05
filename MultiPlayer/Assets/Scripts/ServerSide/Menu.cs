@@ -8,29 +8,12 @@ public class Menu : Bolt.GlobalEventListener
 {
     public Button joinGameButtonPrefab;
     public GameObject serverListPanel;
-    public GameObject setUserNamePanel;
     private List<Button> joinServerButtons = new List<Button>();
     public float  buttonsSpacing;
     ///HOST
 
-    private void Start()
-    {
-      if(PlayerPrefs.GetString("username") == null)
-        {
-            setUserNamePanel.SetActive(true);
-        }
-        else
-        {
-            setUserNamePanel.SetActive(false);
-        }
-    }
 
-    public void setUsernameValue(string input)
-    {
-        print(input);
-        PlayerPrefs.SetString("username", input);
-
-    }
+    
     public void startServer()
     {
         BoltLauncher.StartServer();
