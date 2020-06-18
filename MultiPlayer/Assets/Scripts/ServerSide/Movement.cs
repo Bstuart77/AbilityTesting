@@ -24,7 +24,7 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
 
         state.WeaponActiveIndex = 0;
         gameObject.GetComponent<shootAR>().enabled = false;
-        gameObject.GetComponent<pistolShooting>().enabled = true;
+        gameObject.GetComponent<PistolShooting>().enabled = true;
     }
 
     public override void SimulateOwner()
@@ -42,12 +42,12 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
         {
             state.WeaponActiveIndex = 0;
             gameObject.GetComponent<shootAR>().enabled = false;
-            gameObject.GetComponent<pistolShooting>().enabled = true;
+            gameObject.GetComponent<PistolShooting>().enabled = true;
 
         }
         if (Input.GetKey(KeyCode.Alpha2))   //AR
         {
-            gameObject.GetComponent<pistolShooting>().enabled = false;
+            gameObject.GetComponent<PistolShooting>().enabled = false;
             gameObject.GetComponent<shootAR>().enabled = true;
 
             state.WeaponActiveIndex = 1;
