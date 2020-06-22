@@ -11,8 +11,6 @@ public class PlayerJoined : Bolt.EntityBehaviour<ICustomCubeState>
         var evnt = PlayerJoinedEvent.Create();
         evnt.Message = "Hello There!";
         evnt.Send();
-
-        PlayerPrefs.SetString("username", Random.Range(0, 999).ToString());
     }
 
      void Update()
