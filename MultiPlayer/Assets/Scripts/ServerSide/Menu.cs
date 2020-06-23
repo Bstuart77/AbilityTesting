@@ -29,6 +29,10 @@ public class Menu : Bolt.GlobalEventListener
         print(input);
         PlayerPrefs.SetString("username", input);
     }
+    public void changeUserName()
+    {
+        setUserNamePanel.SetActive(true);
+    }
     public void startServer()
     {
         BoltLauncher.StartServer();
