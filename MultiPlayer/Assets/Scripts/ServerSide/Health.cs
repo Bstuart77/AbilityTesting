@@ -5,13 +5,16 @@ using UnityEngine;
 public class Health : Bolt.EntityBehaviour<ICustomCubeState>
 {
     public int localhealth;
-
+    private Rigidbody rb;
     public override void Attached()
     {
         state.Health = localhealth;
         state.AddCallback("Health", HealthCallBack);
     }
-
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     private void HealthCallBack()
     {
         localhealth = state.Health;
@@ -23,6 +26,7 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
         if(collision.transform.name == "Bullet(Clone)")
         {
             localhealth -= 1;
+            rb.velocity = new Vector3(0, 0, 0);
 
             BoltNetwork.Destroy(collision.gameObject);
             
