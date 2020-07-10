@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localhealth: 5
+  shootingScript: {fileID: 8658370445719163032}
 --- !u!114 &1701254800712632196
 MonoBehaviour:
   m_ObjectHideFlags: 0
