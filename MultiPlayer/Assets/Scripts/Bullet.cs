@@ -6,12 +6,14 @@ public class Bullet : MonoBehaviour
 {
     [HideInInspector]
     public PistolShooting shootingScript;
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.tag == "Obstacles")
+        if (collision.gameObject.tag == "Player")
         {
             shootingScript.scoreScript.changeScore();
+            Score.score++;
             Destroy(gameObject);
         }
     }
+    
 }
