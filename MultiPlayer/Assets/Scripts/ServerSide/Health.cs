@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class Health : Bolt.EntityBehaviour<ICustomCubeState>
 {
-    public int localhealth;
+    public static int localhealth;
     private Rigidbody rb;
     public PistolShooting shootingScript;
     public Text killScore;
-    public static double killAmt = 0;
-
+    public Text deathScore;
     public override void Attached()
     {
         state.Health = localhealth;
@@ -28,25 +27,25 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
 
     private void Update()
     {
-        killScore.text = killAmt.ToString();
+        killScore.text = Score.killAmt.ToString();
+        deathScore.text = Score.deathAmt.ToString();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.name == "Bullet(Clone)")
         {
-            localhealth -= 1;
             rb.velocity = new Vector3(0, 0, 0);
 
             BoltNetwork.Destroy(collision.gameObject);
+            localhealth--;
 
-            if (localhealth <= 0)
+            if(localhealth <= 0 && entity.IsOwner)
             {
                 var spawnPosition = new Vector3(Random.Range(39, 122), 38f, Random.Range(34, -45));
                 transform.position = spawnPosition;
                 localhealth = 5;
-
-
+                Score.deathAmt++;
             }
         }
     }
