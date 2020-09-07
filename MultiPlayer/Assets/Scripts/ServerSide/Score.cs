@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Score : Bolt.EntityBehaviour<ICustomCubeState>
 {
-    public static int score = 1;
-
+    public static int killAmt = 0;
+    public static int deathAmt = 0;
     public void changeScore()
     {
-        if (entity.IsOwner && score == 5)
+        if (entity.IsOwner && Health.localhealth <=0)
         {
-            Health.killAmt++;
-            score = 0;
 
-            /*var scoreEvent = ScoreEvent.Create();
-//            scoreEvent.Message = PlayerPrefs.GetString("username") + " scored " + Health.killAmt;
-           scoreEvent.Send();*/
         }
     }
 }
