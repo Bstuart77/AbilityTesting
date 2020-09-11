@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 public class UIBehavior : MonoBehaviour
 {
-    public Text healthText;
+    public Text healthScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = Health.localhealth.ToString("0");
+        healthScore.text = Health.localhealth.ToString("0");
     }
 }
