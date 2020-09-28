@@ -316,7 +316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71fec6a5f115f3f43848e2233b8aa433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localhealth: 5
   shootingScript: {fileID: 8114361985304351299}
   killScore: {fileID: 0}
   deathScore: {fileID: 0}
@@ -421,6 +420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6d5d85f1aa0834e95166133075fbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killScore: {fileID: 0}
+  deathScore: {fileID: 0}
+  healthScore: {fileID: 0}
 --- !u!1001 &592296675778131439
 PrefabInstance:
   m_ObjectHideFlags: 0
