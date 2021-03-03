@@ -8,8 +8,8 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
     public static int localhealth;
     private Rigidbody rb;
     public PistolShooting shootingScript;
-    public Text killScore;
-    public Text deathScore;
+    public Text healthScore;
+
     public override void Attached()
     {
         state.Health = localhealth;
@@ -23,30 +23,39 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
     private void HealthCallBack()
     {
         localhealth = state.Health;
-    }
 
-    private void Update()
-    {
-        killScore.text = Score.killAmt.ToString();
-        deathScore.text = Score.deathAmt.ToString();
+        if (localhealth <= 0)
+        {
+            Score.deathAmt++;
+            var spawnPosition = new Vector3(Random.Range(39, 122), 38f, Random.Range(34, -45));
+            transform.position = spawnPosition;
+            state.Health = 5;
+            localhealth = 5;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.name == "Bullet(Clone)")
+        if (collision.transform.name == "Bullet(Clone)")
         {
             rb.velocity = new Vector3(0, 0, 0);
 
-            BoltNetwork.Destroy(collision.gameObject);
             localhealth--;
+            state.Health--;
 
-            if(localhealth <= 0 && entity.IsOwner)
+            BoltNetwork.Destroy(collision.gameObject);
+
+            if (localhealth <= 0 && !entity.IsOwner)
             {
-                var spawnPosition = new Vector3(Random.Range(39, 122), 38f, Random.Range(34, -45));
-                transform.position = spawnPosition;
+                Score.killAmt++;
+                state.Health = 5;
                 localhealth = 5;
-                Score.deathAmt++;
             }
         }
+
+    }
+    private void Update()
+    {
+        healthScore.text = localhealth.ToString();
     }
 }

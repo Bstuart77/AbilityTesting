@@ -11,10 +11,5 @@ public class UIBehavior : MonoBehaviour
     {
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        healthScore.text = Health.localhealth.ToString("0");
-    }
+    
 }

@@ -5,7 +5,7 @@ public class PistolShooting : Bolt.EntityBehaviour<ICustomCubeState>
     public Rigidbody bulletPrefab;
     public float bulledSpeed;
     public GameObject muzzle;
-    public Score scoreScript;
+
     public override void Attached()
     {
         state.OnShoot = Shoot;
