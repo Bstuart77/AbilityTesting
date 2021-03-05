@@ -9,6 +9,7 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
     private Rigidbody rb;
     public PistolShooting shootingScript;
     public Text healthScore;
+    public shootAR shootingScript2;
 
     public override void Attached()
     {
@@ -20,6 +21,7 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
         rb = GetComponent<Rigidbody>();
         localhealth = 5;
     }
+    //DONT TOUCH, FIX GLOBAL HEALTH TO CLIENT
     private void HealthCallBack()
     {
         localhealth = state.Health;
