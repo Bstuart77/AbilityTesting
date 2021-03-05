@@ -26,7 +26,6 @@ public class Menu : Bolt.GlobalEventListener
     }
     public void OnSetUserNameValueChanged(string input)
     {
-        print(input);
         PlayerPrefs.SetString("username", input);
     }
     public void changeUserName()
