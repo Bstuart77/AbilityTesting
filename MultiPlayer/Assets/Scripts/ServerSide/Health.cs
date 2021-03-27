@@ -40,12 +40,13 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
         //DO NOT TOUCH!@!!!!!!!!!!!!!!!!!!
         //TRY TO FIX KILLS - USE GAME SHIT FOLDER
         //create bullet script for despawnign bullets when colliding with players
-        if (collision.transform.name == "Bullet(Clone)" && entity.IsOwner)
+        if (collision.transform.name == "Bullet(Clone)")
         {
-            rb.velocity = new Vector3(0, 0, 0);
-            localhealth--;
-            state.Health--;
-
+            if (entity.IsOwner) { 
+                rb.velocity = new Vector3(0, 0, 0);
+                localhealth--;
+                state.Health--;
+            }
             BoltNetwork.Destroy(collision.gameObject);
         }
         
@@ -53,6 +54,6 @@ public class Health : Bolt.EntityBehaviour<ICustomCubeState>
             {
                 Score.killAmt++;
                 localhealth = 5;
-        }
+            }
     }
 }
