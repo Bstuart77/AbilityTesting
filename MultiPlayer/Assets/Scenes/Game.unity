@@ -1135,6 +1135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerModel
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: cf12545eec5bcec4c8a72425736e4aa1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8985917953682413983, guid: cf12545eec5bcec4c8a72425736e4aa1,
         type: 3}
       propertyPath: m_LocalRotation.x
