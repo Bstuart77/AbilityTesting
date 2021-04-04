@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
 {
-    private float sens = 500f;
-    private float moveSpeed = 100f;
     public Transform playerbody;
+    private static float moveSpeed = 100f;
     private float xRotate = 0;
     private float yRotate = 0;
     private Rigidbody rb;
@@ -51,8 +50,8 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
             state.WeaponActiveIndex = 1;
         }
         //free look
-        float mouseX = Input.GetAxis("Mouse X") * sens * BoltNetwork.FrameDeltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sens * BoltNetwork.FrameDeltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * Settings.sens * BoltNetwork.FrameDeltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * Settings.sens * BoltNetwork.FrameDeltaTime;
 
         xRotate -= mouseY;
         yRotate += mouseX;
