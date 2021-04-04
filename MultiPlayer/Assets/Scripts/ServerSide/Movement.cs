@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
 {
-    private float sens = 100f;
-
+    private float sens = 500f;
+    private float moveSpeed = 100f;
     public Transform playerbody;
     private float xRotate = 0;
     private float yRotate = 0;
@@ -29,9 +29,7 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
 
     public override void SimulateOwner()
     {
-        //movement
-
-        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical") * sens * BoltNetwork.FrameDeltaTime);
+        Vector3 movement = new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed *BoltNetwork.FrameDeltaTime, 0, Input.GetAxisRaw("Vertical") * moveSpeed * BoltNetwork.FrameDeltaTime);
 
         Vector3 newPos = rb.position + rb.transform.TransformDirection(movement);
 
