@@ -6,7 +6,7 @@ public class ShowScoreboard : MonoBehaviour
 {
 
     public GameObject scoreboard;
-    public bool isShowing = false;
+    private bool isShowing = false;
 
     // Start is called before the first frame update
     void Start()
