@@ -7,34 +7,41 @@ using UnityEngine.SceneManagement;
 
 public class Settings : MonoBehaviour
 {
-
-   private float sens = 1f;
+    private float sens;
     public AudioSource music;
     public Slider musicSlider;
     public AudioSource soundEffects;
     public Slider soundEffectsSlider;
-
     public GameObject pauseMenu;
     public GameObject audioUI;
     public GameObject sensUI;
     public Slider sensSlider;
-
-
     private bool isPaused = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        music.volume = PlayerPrefs.GetFloat("music");
-        soundEffects.volume = PlayerPrefs.GetFloat("soundEffects");
+        if(PlayerPrefs.GetFloat("musicVolume") == 0f)
+        {
+            musicSlider.value = 1f;
+        }
+        if(PlayerPrefs.GetFloat("sens") == 0f)
+        {
+            sensSlider.value *= 1000f;
+        }
+
+        music.volume = PlayerPrefs.GetFloat("musicVolume");
+        musicSlider.value = music.volume;
         sensSlider.value = PlayerPrefs.GetFloat("sens");
+
+        soundEffects.volume = PlayerPrefs.GetFloat("soundEffects");
         pauseMenu.SetActive(false);
     }
 
     public void MusicVolume(float vol)
     {
         music.volume = vol;
-        PlayerPrefs.SetFloat("volume", music.volume);
+        PlayerPrefs.SetFloat("musicVolume", music.volume);
         PlayerPrefs.Save();
     }
 
@@ -45,10 +52,10 @@ public class Settings : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void Sens(float sens)
+    public void Sens(float sensitivity)
     {
-        sensSlider.value = sens;
-        PlayerPrefs.SetFloat("sens", sensSlider.value);
+        sensSlider.value = sensitivity;
+        PlayerPrefs.SetFloat("sens", sensSlider.value * 1000);
         PlayerPrefs.Save();
     }
 
