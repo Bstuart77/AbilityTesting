@@ -9,6 +9,7 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
     private float xRotate = 0;
     private float yRotate = 0;
     private Rigidbody rb;
+    private float sensHelper;
 
 
     public override void Attached()
@@ -50,8 +51,10 @@ public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
             state.WeaponActiveIndex = 1;
         }
         //free look
-        float mouseX = Input.GetAxis("Mouse X") * Settings.sens * BoltNetwork.FrameDeltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * Settings.sens * BoltNetwork.FrameDeltaTime;
+        sensHelper = PlayerPrefs.GetFloat("sens");
+
+        float mouseX = Input.GetAxis("Mouse X") * sensHelper * BoltNetwork.FrameDeltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * sensHelper * BoltNetwork.FrameDeltaTime;
 
         xRotate -= mouseY;
         yRotate += mouseX;
