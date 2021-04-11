@@ -161,7 +161,6 @@ GameObject:
   - component: {fileID: 385589841616734491}
   - component: {fileID: 8114361985304351299}
   - component: {fileID: 1701254800712632196}
-  - component: {fileID: 8226166294407737816}
   - component: {fileID: 694539600616948425}
   - component: {fileID: 695862961096244551}
   - component: {fileID: 2788926070112930403}
@@ -317,8 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingScript: {fileID: 8114361985304351299}
-  killScore: {fileID: 0}
-  deathScore: {fileID: 0}
+  shootingScript2: {fileID: 0}
 --- !u!114 &8114361985304351299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +333,7 @@ MonoBehaviour:
     type: 3}
   bulledSpeed: 30
   muzzle: {fileID: 4309292163425321122}
-  scoreScript: {fileID: 6693889974752250291}
+  shooter: {fileID: 0}
 --- !u!114 &1701254800712632196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,19 +350,8 @@ MonoBehaviour:
     type: 3}
   bulledSpeed: 30
   muzzle: {fileID: 5360457823937918540}
+  shooter: {fileID: 0}
   fireRate: 15
---- !u!114 &8226166294407737816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7796246830666923079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bc73f56fc54bb5468ae5e40272f373c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &694539600616948425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -420,9 +407,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6d5d85f1aa0834e95166133075fbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthScore: {fileID: 0}
   killScore: {fileID: 0}
   deathScore: {fileID: 0}
-  healthScore: {fileID: 0}
+  scoreboardName: {fileID: 0}
+  playerName: {fileID: 0}
 --- !u!1001 &592296675778131439
 PrefabInstance:
   m_ObjectHideFlags: 0
