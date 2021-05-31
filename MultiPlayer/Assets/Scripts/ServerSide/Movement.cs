@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : Bolt.EntityBehaviour<ICustomCubeState>
 {
     public Transform playerbody;
-    private static float moveSpeed = 200;
+    private float moveSpeed = 250;
     private float xRotate = 0;
     private float yRotate = 0;
     private Rigidbody rb;
