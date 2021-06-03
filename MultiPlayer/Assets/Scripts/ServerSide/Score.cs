@@ -11,7 +11,6 @@ public class Score : Bolt.EntityBehaviour<ICustomCubeState>
     public Text killScore;
     public Text deathScore;
     public Text scoreboardName;
-    public Text playerName;
 
     private void Update()
     {
@@ -19,6 +18,5 @@ public class Score : Bolt.EntityBehaviour<ICustomCubeState>
         deathScore.text = deathAmt.ToString();
         scoreboardName.text = PlayerPrefs.GetString("username").ToString();
         healthScore.text = Health.localhealth.ToString();
-        playerName.text = PlayerPrefs.GetString("username").ToString();
     }
 }
