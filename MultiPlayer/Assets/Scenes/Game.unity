@@ -3125,6 +3125,16 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4941042436642224379, guid: 479c7944629c0a64c851498b2a8eb290,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971118655340471044, guid: 479c7944629c0a64c851498b2a8eb290,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 479c7944629c0a64c851498b2a8eb290, type: 3}
 --- !u!1 &868273968
@@ -8196,7 +8206,7 @@ PrefabInstance:
     - target: {fileID: 1701254800712632196, guid: 153234bc3de8b884099520c733c371a1,
         type: 3}
       propertyPath: bulledSpeed
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 694539600616948425, guid: 153234bc3de8b884099520c733c371a1,
         type: 3}
@@ -8428,6 +8438,11 @@ PrefabInstance:
       propertyPath: shooter
       value: 
       objectReference: {fileID: 6152545007885023852}
+    - target: {fileID: 8230418062384228137, guid: 153234bc3de8b884099520c733c371a1,
+        type: 3}
+      propertyPath: bulledSpeed
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 46395618022313074, guid: 153234bc3de8b884099520c733c371a1, type: 3}
     - {fileID: 5348926699234609514, guid: 153234bc3de8b884099520c733c371a1, type: 3}
