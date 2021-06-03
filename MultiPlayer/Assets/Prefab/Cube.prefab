@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4941042436642224379, guid: 479c7944629c0a64c851498b2a8eb290,
     type: 3}
-  bulledSpeed: 100
+  bulledSpeed: 500
   muzzle: {fileID: 5360457823937918540}
   fireRate: 15
 --- !u!54 &694539600616948425
@@ -393,7 +393,6 @@ MonoBehaviour:
   killScore: {fileID: 0}
   deathScore: {fileID: 0}
   scoreboardName: {fileID: 0}
-  playerName: {fileID: 0}
 --- !u!114 &8230418062384228137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4941042436642224379, guid: 479c7944629c0a64c851498b2a8eb290,
     type: 3}
-  bulledSpeed: 100
+  bulledSpeed: 500
   muzzle: {fileID: 4309292163425321122}
 --- !u!1001 &592296675778131439
 PrefabInstance:
